@@ -11,8 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      MAVEN_OPTS: -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+    permissions: write-all
+
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK
@@ -27,7 +27,7 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_SECRET_KEY }}
           gpg-passphrase: GPG_SECRET_KEY_PASSPHRASE
       - name: Build with Maven
-        run: mvn -B  deploy
+        run: mvn -B --ntp deploy
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
