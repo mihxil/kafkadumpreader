@@ -9,7 +9,9 @@ class KafkaDumpReaderTest {
     @Test
     public void test() {
         Stream<KafkaDumpReader.Record> read = KafkaDumpReader.read(getClass().getResourceAsStream("/availability/availability-messages.table"));
-        read.forEach(r -> {
+        read
+            .limit(5)
+            .forEach(r -> {
             System.out.println(r.toString() + " " + r.key() + "=" + r.offset());
         });
     }
