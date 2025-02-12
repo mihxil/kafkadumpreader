@@ -1,7 +1,6 @@
 package org.meeuw.util.kafka;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
@@ -36,7 +35,7 @@ public class KafkaDumpReader {
         // skip header
         //log.debug(Arrays.asList(readRecord(scanner, NUMBER_OF_FIELDS_IN_RECORD)));
 
-        return StreamSupport.stream(new Spliterator<>() {
+        Stream<Record> stream = StreamSupport.stream(new Spliterator<>() {
             @Override
             public int characteristics() {
                 return Spliterator.DISTINCT;
@@ -75,6 +74,7 @@ public class KafkaDumpReader {
                 return null;
             }
         }, false);
+        return stream.onClose(scanner::close);
     }
 
 
