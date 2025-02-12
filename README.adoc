@@ -8,7 +8,7 @@ image:https://img.shields.io/nexus/s/https/oss.sonatype.org/org.meeuw.util/kafka
 
 The  https://plugins.jetbrains.com/plugin/21704-kafka['kafka' intellij plugin] provides the option to 'dump' a part of a topic to a file.
 
-The format that happens in is a bit odd. This provides a tool to deal with it. I use it in test cases.
+The format that happens in is a bit odd. This provides a tool to deal with it. I use it in test cases, where such dumps can just be test resources, and this tool can read them to e.g. feed these Kafka records to some service that would handle them.
 
 
 [source, java]
