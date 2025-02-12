@@ -6,7 +6,7 @@ image:https://img.shields.io/maven-central/v/org.meeuw.util/kafkadumpreader.svg?
 //  image:https://www.javadoc.io/badge/org.meeuw.util/kafkadumpreader.svg?color=blue[javadoc,link=https://www.javadoc.io/doc/org.meeuw.util/kafkadumpreader]
 image:https://img.shields.io/nexus/s/https/oss.sonatype.org/org.meeuw.util/kafkadumpreader.svg[snapshots,link=https://oss.sonatype.org/content/repositories/snapshots/org/meeuw/util/]
 
-The  https://plugins.jetbrains.com/plugin/21704-kafka['kafka' intellij plugin'] provides the option to 'dump' a part of a topic to a file.
+The  https://plugins.jetbrains.com/plugin/21704-kafka['kafka' intellij plugin] provides the option to 'dump' a part of a topic to a file.
 
 The format that happens in is a bit odd. This provides a tool to deal with it. I use it in test cases.
 
@@ -26,6 +26,7 @@ class KafkaDumpReaderTest {
         Stream<KafkaDumpReader.Record> read = KafkaDumpReader.read(getClass().getResourceAsStream("/availability/availability-messages.table"));
         read.forEach(r -> {
             System.out.println(r.toString() + " " + r.key() + "=" + r.offset());
+             // publish it to a test container Kafka or so. ..
         });
     }
 

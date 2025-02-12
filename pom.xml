@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.meeuw.util</groupId>
   <artifactId>kafkadumpreader</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1-SNAPSHOT</version>
   <name>Kafka dump reader</name>
   <description>A tool to deal with 'kafka dumps'</description>
 
