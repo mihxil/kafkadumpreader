@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.meeuw.util</groupId>
   <artifactId>kafkadumpreader</artifactId>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
   <name>Kafka dump reader</name>
   <description>A tool to deal with 'kafka dumps'</description>
 
@@ -50,7 +50,7 @@
     <connection>scm:git:${project.scm.url}.git</connection>
     <developerConnection>scm:git:${project.scm.url}.git</developerConnection>
     <url>https://github.com/mihxil/kafkadumpreader</url>
-    <tag>1.1</tag>
+    <tag>main</tag>
   </scm>
 
   <distributionManagement>
