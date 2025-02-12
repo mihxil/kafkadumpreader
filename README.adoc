@@ -2,7 +2,7 @@
 
 image:https://github.com/mihxil/utils/actions/workflows/maven.yml/badge.svg?[Build Status,link=https://github.com/mihxil/kafkadumpreader/actions/workflows/maven.yml]
 image:https://img.shields.io/maven-central/v/org.meeuw.util/kafkadumpreader.svg?label=Maven%20Central[Maven Central,link=https://central.sonatype.com/artifact/org.meeuw.util/kafkadumpreader/overview]
-// image:https://codecov.io/gh/mihxil/kafkadumpreader/branch/main/graph/badge.svg[codecov,link=https://codecov.io/gh/mihxil/kafkadumpreader]
+image:https://codecov.io/gh/mihxil/kafkadumpreader/graph/badge.svg?token=PZ2IZ5TOHY[codecove, link=https://codecov.io/gh/mihxil/kafkadumpreader]
 //  image:https://www.javadoc.io/badge/org.meeuw.util/kafkadumpreader.svg?color=blue[javadoc,link=https://www.javadoc.io/doc/org.meeuw.util/kafkadumpreader]
 image:https://img.shields.io/nexus/s/https/oss.sonatype.org/org.meeuw.util/kafkadumpreader.svg[snapshots,link=https://oss.sonatype.org/content/repositories/snapshots/org/meeuw/util/]
 
