@@ -28,9 +28,6 @@ public class Consume implements Callable<Integer> {
     String[] topics;
 
 
-    @Option(names = "--aws",  description = "The topics to consume from", defaultValue = "false")
-    boolean aws;
-
 
 
     public static void main(String[] argv) {
@@ -64,6 +61,7 @@ public class Consume implements Callable<Integer> {
         String secretKey = (String) properties.get("kafka.aws.secretKey");
         System.setProperty("aws.secretAccessKey", secretKey);
 
+        boolean aws = accessKeyId != null;
         if (aws) {
             properties.putIfAbsent("security.protocol", "SASL_SSL");
             properties.putIfAbsent("sasl.mechanism", "AWS_MSK_IAM");
@@ -73,6 +71,7 @@ public class Consume implements Callable<Integer> {
 
         getRecords(properties, topics)
             .forEach((r) -> {
+                System.out.println("\n\n-----------" + r.topic() + "\t" + r.partition() + "\t" + r.offset() + "\n");
                 System.out.println(Instant.ofEpochMilli(r.timestamp()) + "\t" + r.key());
                 r.headers().forEach((h) -> {
                     System.out.println(h.key() + ": " + new String(h.value()));
