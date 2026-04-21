@@ -11,6 +11,11 @@ The  https://plugins.jetbrains.com/plugin/21704-kafka['kafka' intellij plugin] p
 The format that happens in is a bit odd. This provides a tool to deal with it. I use it in test cases, where such dumps can just be test resources, and this tool can read them to e.g. feed these Kafka records to some service that would handle them.
 
 
+I think nowadays the plugin is named 'Confluent' and support also other downloads like TSV, CSV and JSON.
+
+We might support that too, but on the other hand that then is hardly necessary.
+
+
 [source, java]
 ----
 package org.meeuw.util.kafka;
